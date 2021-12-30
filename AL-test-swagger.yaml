@@ -1,0 +1,104 @@
+swagger: '2.0'
+info:
+  description: This is a simple API
+  version: 1.0.0
+  title: Simple Inventory API
+  # put the contact info for your development or API team
+  contact:
+    email: you@your-company.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+# tags are used for organizing operations
+tags:
+- name: test
+  description: everyone testing can call
+
+paths:
+  /reverse:
+    post:
+      tags:
+      - test
+      summary: reverse string
+      operationId: reverseString
+      description: Reverse sent string
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: StringItem
+        description: String Item to process
+        schema:
+          $ref: '#/definitions/StringItem'
+      responses:
+        201:
+          description: array reversed
+        400:
+          description: invalid input, object invalid
+  /vowel:
+    post:
+      tags:
+      - test
+      summary: vowel count
+      operationId: vowelCount
+      description: Count the number of vowels in a string
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: StringItem
+        description: String Item to process
+        schema:
+          $ref: '#/definitions/StringItem'
+      responses:
+        201:
+          description: array reversed
+        400:
+          description: invalid input, object invalid
+  /nonrepeat:
+    post:
+      tags:
+      - test
+      summary: first non repeated character
+      operationId: nonRepeat
+      description: Returns the first non repeated character from the String
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: StringItem
+        description: String Item to process
+        schema:
+          $ref: '#/definitions/StringItem'
+      responses:
+        201:
+          description: array reversed
+        400:
+          description: invalid input, object invalid
+definitions:
+  StringItem:
+    type: object
+    required:
+    - id
+    - string
+    properties:
+      id:
+        type: string
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      string:
+        type: string
+        example: 'Hello World'
+# Added by API Auto Mocking Plugin
+host: localhost
+basePath: /api
+schemes:
+ - https

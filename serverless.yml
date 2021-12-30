@@ -1,0 +1,41 @@
+service: simple-inventory-api
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  reverse:
+    handler: index.reverse
+    events:
+      - http:
+          path: api/reverse
+          method: post
+          cors: true
+          request:
+            schema:
+              application/json: ${file(schema.json)}
+  vowel:
+    handler: index.vowel
+    events:
+      - http:
+          path: api/vowel
+          method: post
+          cors: true
+          request:
+            schema:
+              application/json: ${file(schema.json)}
+  nonrepeat:
+    handler: index.nonrepeat
+    events:
+      - http:
+          path: api/nonrepeat
+          method: post
+          cors: true
+          request:
+            schema:
+              application/json: ${file(schema.json)}

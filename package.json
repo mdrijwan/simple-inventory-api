@@ -1,0 +1,25 @@
+{
+  "name": "simple-inventory-api",
+  "version": "1.0.0",
+  "description": "Technical assesment for Air Liquid",
+  "main": "index.js",
+  "scripts": {
+    "start": "sls offline start"
+  },
+  "keywords": [
+    "api",
+    "tech",
+    "assesment",
+    "algorithm"
+  ],
+  "author": "Md Rijwan Razzaq Matin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.0",
+    "serverless-offline": "^8.3.1",
+    "serverless-plugin-typescript": "^2.1.0",
+    "ts-node": "^10.4.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.4"
+  }
+}
